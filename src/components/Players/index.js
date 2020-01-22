@@ -72,8 +72,8 @@ class Players extends Component {
 
   compare(selectedPlayer, otherPlayer) {
     return {
-      selectedPlayerScore: selectedPlayer.score.toFixed(2),
-      otherPlayerScore: otherPlayer.score.toFixed(2),
+      selectedPlayerScore: selectedPlayer.score,
+      otherPlayerScore: otherPlayer.score,
       message: selectedPlayer.score > otherPlayer.score ? "Correct!" : "Wrong!",
       result: selectedPlayer.score > otherPlayer.score
     };
