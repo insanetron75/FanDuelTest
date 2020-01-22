@@ -1,2 +1,0 @@
-# FanDuelTest
-Created with CodeSandbox
