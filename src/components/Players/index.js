@@ -5,7 +5,8 @@ import {
   Container,
   Col,
   Row,
-  Button
+  Button,
+  Card
 } from 'react-bootstrap';
 import Player from "../Player";
 
@@ -42,7 +43,6 @@ class Players extends Component {
   }
 
   handleClick(e) {
-    console.log(this.state);
     const players = [
       this.createPlayer('', this.state.players[0]),
       this.createPlayer('', this.state.players[1]),
@@ -63,19 +63,23 @@ class Players extends Component {
     this.componentDidMount();
   }
 
-  compare(selectedPlayer, otherPlayer) {
-    const result = selectedPlayer.score > otherPlayer.score;
-    console.log(selectedPlayer.score)
-    console.log(otherPlayer.score)
-    console.log(result);
-    return selectedPlayer.score > otherPlayer.score
-  }
+  compare = (selectedPlayer, otherPlayer) => (selectedPlayer.score > otherPlayer.score)
 
   render() {
     const firstPlayer = this.createPlayer('Player 1', this.state.players[0]);
     const secondPlayer = this.createPlayer('Player 2',this.state.players[1]);
     return (
       <Container>
+        <Row className="mt-1">
+          <Col></Col>
+            <Col>
+              <Card bg="success">
+                <Card.Header>Score:</Card.Header>
+                <Card.Title>{this.state.count}</Card.Title>
+              </Card>
+            </Col>
+          <Col></Col>
+        </Row>
         <Row>
           <Col>
             <Player player={ firstPlayer }></Player>
