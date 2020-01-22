@@ -67,6 +67,8 @@ class Players extends Component {
       currentState.count = currentState.count + 1;
       if (currentState.count === 10) {
         alert('you win!');
+        currentState.count = 0;
+        result.message = "You've won! Keep going"
       }
     }
 
