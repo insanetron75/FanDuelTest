@@ -1,11 +1,14 @@
 import React from "react";
+import Players from "./components/Players";
 import "./styles.css";
+import getPlayers from "./api/getPlayers";
 
 export default function App() {
+  const players = getPlayers();
   return (
     <div className="App">
-      <h1>Hello CodeSandbox</h1>
-      <h2>Start editing to see some magic happen!</h2>
+      <h1>Float Test</h1>
+      <Players players={players} />
     </div>
   );
 }
